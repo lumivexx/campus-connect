@@ -1,0 +1,196 @@
+/**
+ * Base CSS: Design Tokens, Typography, Reset, and Utilities
+ * Campus Connect AI - Parent-First Family College Decision System
+ * Visual tone: Trustworthy, Premium, Calm, Educational, Family-Friendly, Modern Indian
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Brand Primary Colors (Deep Trustworthy Academic Navy & Oxford Blue) */
+  --primary-50: #EFF6FF;
+  --primary-100: #DBEAFE;
+  --primary-200: #BFDBFE;
+  --primary-300: #93C5FD;
+  --primary-400: #60A5FA;
+  --primary-500: #2563EB;
+  --primary-600: #1D4ED8; /* Deep Oxford Blue */
+  --primary-700: #1E40AF;
+  --primary-800: #1E3A8A;
+  --primary-900: #0F172A;
+  --primary-950: #020617;
+
+  /* Standardized Parent Decision Tiers (Calm, Credible, Distinct) */
+  --tier-best-bg: #ECFDF5;
+  --tier-best-text: #065F46;
+  --tier-best-border: #A7F3D0;
+
+  --tier-good-bg: #EFF6FF;
+  --tier-good-text: #1E40AF;
+  --tier-good-border: #BFDBFE;
+
+  --tier-stretch-bg: #F5F3FF;
+  --tier-stretch-text: #5B21B6;
+  --tier-stretch-border: #DDD6FE;
+
+  --tier-backup-bg: #FFFBEB;
+  --tier-backup-text: #92400E;
+  --tier-backup-border: #FDE68A;
+
+  /* Trust & Status Badges */
+  --verified-emerald: #065F46;
+  --verified-bg: #ECFDF5;
+  --verified-border: #A7F3D0;
+
+  --historical-amber: #92400E;
+  --historical-bg: #FFFBEB;
+  --historical-border: #FDE68A;
+
+  --ai-purple: #5B21B6;
+  --ai-bg: #F5F3FF;
+  --ai-border: #DDD6FE;
+
+  --danger-red: #B91C1C;
+  --danger-bg: #FEF2F2;
+  --danger-border: #FECACA;
+
+  /* Neutrals (Clean Slate & Soft Ivory Warmth) */
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows - Soft, subtle, calm */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.02);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+  --shadow-float: 0 12px 30px -4px rgba(15, 23, 42, 0.08);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* CSS Reset & Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--slate-800);
+  background-color: var(--slate-50);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--slate-50);
+}
+
+img, svg, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--primary-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-700);
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--slate-900);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: 2.1rem; }
+h2 { font-size: 1.55rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.05rem; }
+
+p {
+  color: var(--slate-600);
+  line-height: 1.65;
+}
+
+/* Utility Helpers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
